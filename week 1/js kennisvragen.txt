@@ -1,0 +1,104 @@
+﻿1. Javascript is een scripttaal waarmee je websites interactive kan maken
+2. om een website interactief te maken
+3. het is meer naar een menselijke taal dan een robot taal.
+4. het is een applicatie die wordt geladen op een browser.
+5. ES6
+6. <script> src=”(je java script file) ” </script> of je typte je javascript gwn tussen  de script
+7. een value is hoeveel iets waard is 
+8. een variabele is bijvoorbeeld een nummer en de value is hoeveel dat nummer is
+9. de naam van de variable
+10.   11. De foutmelder
+12. a
+13. d
+14. syntactische fout is een fout in de opdracht 
+15.  semantische is foute taal.
+16. 17. een data type is een type data zoals een string of een nummer of een boolean
+18. als je iets wilt uitleggen of als je iets uit je code wilt halen maar niet verwijderen of om het duidelijk te maken dat dat stukje tekst dat is.
+19. console.log(“dit zegt letterlijk herder”) console.log(herder) dit roept een variabele op.
+20. bro wat
+21. a = 3
+b = 1
+c = 2
+
+
+   22. het is legaal want alpha is een naam dus het werkt
+   23. dat is ook legaal want dat is ook een naam
+   24.  = of + of - of == of || dat soort dingen
+   25. als je = zegt dan zeg je dat bijv. hallo is 4 maar als is == zegt dan moet hallo gelijk zijn aan 4
+   26. 20
+   27. 75
+   28. false
+   29. -10
+   30. false
+   31. false
+   32. true
+   33. -10
+   34. 5
+   35. 75
+   36. 6
+   37. dat is dat de * eerder komt dan de plus
+
+
+sectie 2
+
+
+
+
+   1. Een stukje tekst
+   2. +
+   3. Jorn is stupid
+   4. jorn is brilliant
+   5. wat de fuck is dit
+   6. er hoort geen dubbele punt in het midden 
+   7. nummers
+   8. dat alles op volgorde is gezet
+   9. omdat het een een gestructureerde stappen volgt
+
+
+
+
+   1. nee
+   2. je moet gwn een sting maken en dan doe je de int er bij en dan doet js het automatisch
+   3. hetzelfde als boven maar dan andersom
+   4. 43
+   5. -12
+   6. 2521
+   7. 37
+   8. 5512
+   9. ik kan die shit niet doen want ik krijgen error
+   10. ik kan alweer niet die shit doen
+   11. een boolean die false is
+   12. een boolean die true is 
+   13. niet waar want x is geen variabele
+   14. niet waar
+   15. niet waar
+   16. waar
+   17. niet waar
+   18. waar
+   19. niet waar
+   20. niet waar
+   21. waar
+   22. de == doet alleen de alles als het maar gelijk is bijv 15 of 15 of “15”  maar === doet specifiek datatype dus alleen 15 15 of “15” “15”
+   23. ok
+   24. Het begin van het begin
+   25. ok
+   26. ja
+   27. ja
+   28. ja
+   29. ja
+   30. nee
+   31. als het ongelijk is dus bijv als
+let ouderen = 15;
+ if(ouderen != 15){
+console.log(“Hallo”);
+}else{
+console.log(“je vader ”);
+}
+
+
+   32. true
+   33. false
+   34.    35. you do something you like, probably in the public sector!
+   36. You are not a teacher
+   37. good for you
+   38. ?
