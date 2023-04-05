@@ -11,50 +11,33 @@ let images = [
   "Images/Dice-5.png",
   "Images/Dice-6.png",
 ];
+
 let dice1 = document.getElementById("die1");
 let dice2 = document.getElementById("die2");
 let dice3 = document.getElementById("die3");
 let dice4 = document.getElementById("die4");
 let dice5 = document.getElementById("die5");
 
-let knophold = document.getElementsByClassName("dice");
+let acesp1 = document.getElementById("aces--p1");
+let twosp1 = document.getElementById("twos--p1");
+let threesp1 = document.getElementById("threes--p1");
+let foursp1 = document.getElementById("fours--p1");
+let fivesp1 = document.getElementById("fives--p1");
+let sixesp1 = document.getElementById("sixes--p1");
 
-let dobbel1 = {
-  image: "Images/Dice-1.png",
-  el: document.getElementById("die1"),
-  waarde: 1,
-  hold: false,
-};
-let dobbel2 = {
-  image: "Images/Dice-1.png",
-  el: document.getElementById("die2"),
-  waarde: 1,
-  hold: false,
-};
-let dobbel3 = {
-  image: "Images/Dice-1.png",
-  el: document.getElementById("die3"),
-  waarde: 1,
-  hold: false,
-};
-let dobbel4 = {
-  image: "Images/Dice-1.png",
-  el: document.getElementById("die4"),
-  waarde: 1,
-  hold: false,
-};
-let dobbel5 = {
-  image: "Images/Dice-1.png",
-  el: document.getElementById("die5"),
-  waarde: 1,
-  hold: false,
-};
+let tkindp1 = document.getElementById("tkind--p1");
+let fkindp1 = document.getElementById("fkind--p1");
+let fousep1 = document.getElementById("fouse--p1");
+let smallp1 = document.getElementById("small--p1");
+let largep1 = document.getElementById("large--p1");
+let yahtzeep1 = document.getElementById("yahtzee--p1");
+let chancep1 = document.getElementById("chance--p1");
+
+let knophold = document.getElementsByClassName("dice");
 
 let hold = [false, false, false, false, false];
 let dice = [dice1, dice2, dice3, dice4, dice5];
 let values = [1, 1, 1, 1, 1];
-
-let testdb = [dobbel1];
 
 let rollover = 3;
 
@@ -87,19 +70,59 @@ dobbel.onclick = function roll() {
       turn = false;
     }
   }
+  calculatePoints();
+  single();
+  fullHouse(checker());
 };
 
-function nOfAKind(num, dice) {
-  let points;
-  return points;
-}
+function nOfAKind(num, dice) {}
 //functie voor een full house
-function fullHouse(dice) {}
+function checker() {
+  let nummer = [];
+  for (let i = 0; i < 6; i++) {
+    if (values.includes(i)) {
+      nummer.push(i);
+    }
+  }
+  console.log(nummer);
+  return nummer;
+}
+function fullHouse(nummer) {
+  if (nummer.length == 2) {
+    fousep1.innerHTML = 25;
+  } else {
+    fousep1.innerHTML = 0;
+  }
+}
 
-function single(num, dice) {}
+function single() {}
 
 function lockDie() {}
 
-function calculatePoints(dice) {}
+function calculatePoints(dice) {
+  let singles = [0, 0, 0, 0, 0, 0];
+  values.forEach(function (num) {
+    if (num == 0) {
+      singles[0]++;
+    } else if (num == 1) {
+      singles[1]++;
+    } else if (num == 2) {
+      singles[2]++;
+    } else if (num == 3) {
+      singles[3]++;
+    } else if (num == 4) {
+      singles[4]++;
+    } else if (num == 5) {
+      singles[5]++;
+    }
+  });
+
+  acesp1.innerHTML = singles[0] * 1;
+  twosp1.innerHTML = singles[1] * 2;
+  threesp1.innerHTML = singles[2] * 3;
+  foursp1.innerHTML = singles[3] * 4;
+  fivesp1.innerHTML = singles[4] * 5;
+  sixesp1.innerHTML = singles[5] * 6;
+}
 
 function swapTurn() {}
