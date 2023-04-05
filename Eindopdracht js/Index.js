@@ -75,8 +75,8 @@ dobbel.onclick = function roll() {
   fullHouse(checker());
 };
 
-function nOfAKind(num, dice) {}
-//functie voor een full house
+function nOfAKind(nummer) {}
+
 function checker() {
   let nummer = [];
   for (let i = 0; i < 6; i++) {
@@ -91,13 +91,16 @@ function fullHouse(nummer) {
   if (nummer.length == 2) {
     fousep1.innerHTML = 25;
   } else {
-    fousep1.innerHTML = 0;
+    fousep1.innerHTML = "-";
+  }
+  if (nummer.length == 1) {
+    yahtzeep1.innerHTML = 50;
+  } else {
+    yahtzeep1.innerHTML = "-";
   }
 }
 
 function single() {}
-
-function lockDie() {}
 
 function calculatePoints(dice) {
   let singles = [0, 0, 0, 0, 0, 0];
@@ -123,6 +126,14 @@ function calculatePoints(dice) {
   foursp1.innerHTML = singles[3] * 4;
   fivesp1.innerHTML = singles[4] * 5;
   sixesp1.innerHTML = singles[5] * 6;
+
+  chancep1.innerHTML =
+    singles[0] * 1 +
+    singles[1] * 2 +
+    singles[2] * 3 +
+    singles[3] * 4 +
+    singles[4] * 5 +
+    singles[5] * 6;
 }
 
 function swapTurn() {}
