@@ -48,6 +48,11 @@ let dobbel = document.getElementById("dobelknop");
 for (let i = 0; i < knophold.length; i++) {
   knophold[i].onclick = function vast() {
     hold[i] = !hold[i];
+    if (hold[i] == false) {
+      this.style.opacity = 1;
+    } else if (hold[i]) {
+      this.style.opacity = 0.6;
+    }
   };
 }
 
@@ -71,11 +76,108 @@ dobbel.onclick = function roll() {
     }
   }
   calculatePoints();
-  single();
   fullHouse(checker());
+  if (hasThreeOfAKind(values)) {
+    tkindp1.innerHTML = 30;
+  } else {
+    tkindp1.innerHTML = "-";
+  }
+
+  if (hasfourOfAKind(values)) {
+    fkindp1.innerHTML = 40;
+  } else {
+    fkindp1.innerHTML = "-";
+  }
+
+  if (smallStraight(values)) {
+    smallp1.innerHTML = 30;
+  } else {
+    smallp1.innerHTML = "-";
+  }
+  if (largeStraight(values)) {
+    largep1.innerHTML = 40;
+  } else {
+    largep1.innerHTML = "-";
+  }
 };
 
-function nOfAKind(nummer) {}
+function hasThreeOfAKind(values) {
+  for (let i = 0; i <= 6; i++) {
+    if (nOfAKind(i, values) >= 3) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function hasfourOfAKind(values) {
+  for (let i = 0; i <= 6; i++) {
+    if (nOfAKind(i, values) >= 4) {
+      return true;
+    }
+  }
+  return false;
+}
+function nOfAKind(num, values) {
+  let count = 0;
+  for (let i = 0; i < values.length; i++) {
+    if (values[i] === num) {
+      count++;
+    }
+  }
+  return count;
+}
+
+function smallStraight(diceValues) {
+  let sortedValues = diceValues.slice().sort();
+
+  if (
+    sortedValues.includes(0) &&
+    sortedValues.includes(1) &&
+    sortedValues.includes(2) &&
+    sortedValues.includes(3)
+  ) {
+    return true;
+  } else if (
+    sortedValues.includes(1) &&
+    sortedValues.includes(2) &&
+    sortedValues.includes(3) &&
+    sortedValues.includes(4)
+  ) {
+    return true;
+  } else if (
+    sortedValues.includes(2) &&
+    sortedValues.includes(3) &&
+    sortedValues.includes(4) &&
+    sortedValues.includes(5)
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+function largeStraight(diceValues) {
+  let sortedValues = diceValues.slice().sort();
+  if (
+    sortedValues.includes(0) &&
+    sortedValues.includes(1) &&
+    sortedValues.includes(2) &&
+    sortedValues.includes(3) &&
+    sortedValues.includes(4)
+  ) {
+    return true;
+  } else if (
+    sortedValues.includes(1) &&
+    sortedValues.includes(2) &&
+    sortedValues.includes(3) &&
+    sortedValues.includes(4) &&
+    sortedValues.includes(5)
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 function checker() {
   let nummer = [];
@@ -84,7 +186,7 @@ function checker() {
       nummer.push(i);
     }
   }
-  console.log(nummer);
+
   return nummer;
 }
 function fullHouse(nummer) {
@@ -99,8 +201,6 @@ function fullHouse(nummer) {
     yahtzeep1.innerHTML = "-";
   }
 }
-
-function single() {}
 
 function calculatePoints(dice) {
   let singles = [0, 0, 0, 0, 0, 0];
